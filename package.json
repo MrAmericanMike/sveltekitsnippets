@@ -1,0 +1,40 @@
+{
+	"name": "sveltekitsnippets",
+	"displayName": "SvelteKit Snippets",
+	"description": "SvelteKit Snippets",
+	"version": "0.0.1",
+	"license": "MIT",
+	"publisher": "MrAmericanMike",
+	"author": {
+		"name": "MrAmericanMike"
+	},
+	"icon": "icons/logo.png",
+	"engines": {
+		"vscode": "^1.70.0"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"keywords": [
+		"sveltekit",
+		"kit",
+		"svelte",
+		"snippets"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/MrAmericanMike/sveltekitsnippets.git"
+	},
+	"bugs": {
+		"url": "https://github.com/MrAmericanMike/sveltekitsnippets/issues"
+	},
+	"contributes": {
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./snippets/sveltekit-javascript.code-snippets"
+			}
+		]
+	}
+}
+
