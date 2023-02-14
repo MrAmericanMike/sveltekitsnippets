@@ -4,7 +4,7 @@ This Extension adds snippets for SvelteKit.
 
 ## Features
 
-Snippets for `javascript`.
+Snippets for `javascript` and `typescript`.
 
 Example:
 
@@ -14,20 +14,35 @@ Example:
 import {} from "@sveltejs/kit";
 ```
 
-`$get` will expand to:
+`$get` in Javascript will expand to:
 
 ```js
-/** @type {import('./$types').RequestHandler} */
+/** @type {import("./$types").RequestHandler} */
 export function GET(event) {
 	return json({});
 }
 ```
 
-`$pagedata` will expand to:
+`$get` in Typescript will expand to:
+
+```ts
+export const GET = ((event) => {
+	return json({});
+}) satisfies RequestHandler;
+```
+
+`$pagedata` in Javascript will expand to:
 
 ```js
-/** @type {import('./\\$types').PageData} */
+/** @type {import("./$types").PageData} */
 export let data;
+```
+
+`$pagedata` in Typescript will expand to:
+
+```ts
+import type { PageData } from \"./$types\";
+export let data: PageData;
 ```
 
 **Many other snippets like:**
@@ -35,6 +50,12 @@ export let data;
 `$import`, `$get`, `$post`, `$patch`, `$put`, `$delete`, `$pagedata`, `$layoutdata`, `$environment`, `$forms`, `$navigation`, `$paths`, `$stores`, `$envstaticpublic`, `$envstaticprivate`, `$envdynamicpublic`, `$envdynamicprivate`, `$serviceworker`, `$hooks`, `$node`, `$polyfills`, `$vite`, `$lib`, `$internal`
 
 ## Release Notes
+
+### 0.0.3
+
+Fixed minor error on documentation
+Added Issues Tracker to the documentation
+Added basic support for TypeScript
 
 ### 0.0.2
 
@@ -50,6 +71,10 @@ Initial release of Svelte Snippets by MrAmericanMike
 
 Do you have a request or idea for the extension. Please post it on our [Discussion Board](https://github.com/MrAmericanMike/sveltekitsnippets/discussions) on GitHub
 
+## Issues
+
+Please report any issues on GitHub [Issues Tracker](https://github.com/MrAmericanMike/sveltekitsnippets/issues)
+
 ---
 
 ## Pending features
@@ -57,6 +82,4 @@ Do you have a request or idea for the extension. Please post it on our [Discussi
 Determine if it's possible for a snippets extension to have a configuration option and use it so the final user can decide if they want single or double quotes
 
 ---
-
-**Enjoy!**
 

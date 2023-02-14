@@ -1,0 +1,87 @@
+{
+	"SvelteKit Import": {
+		"prefix": "$import",
+		"body": "import { ${1} } from \"@sveltejs/kit\";",
+		"description": "SvelteKit Import"
+	},
+	"SvelteKit Import Environment": {
+		"prefix": "$environment",
+		"body": "import { ${1} } from \"\\$app/environment\";",
+		"description": "SvelteKit Import Environment"
+	},
+	"SvelteKit Import Forms": {
+		"prefix": "$forms",
+		"body": "import { ${1} } from \"\\$app/forms\";",
+		"description": "SvelteKit Import Forms"
+	},
+	"SvelteKit Import Navigation": {
+		"prefix": "$navigation",
+		"body": "import { ${1} } from \"\\$app/navigation\";",
+		"description": "SvelteKit Import Navigation"
+	},
+	"SvelteKit Import Paths": {
+		"prefix": "$paths",
+		"body": "import { ${1} } from \"\\$app/paths\";",
+		"description": "SvelteKit Import Paths"
+	},
+	"SvelteKit Import Stores": {
+		"prefix": "$stores",
+		"body": "import { ${1} } from \"\\$app/stores\";",
+		"description": "SvelteKit Import Stores"
+	},
+	"SvelteKit Import Env Static Public": {
+		"prefix": "$envstaticpublic",
+		"body": "import { ${1} } from \"\\$env/static/public\";",
+		"description": "SvelteKit Import Env Static Public"
+	},
+	"SvelteKit Import Env Static Private": {
+		"prefix": "$envstaticprivate",
+		"body": "import { ${1} } from \"\\$env/static/private\";",
+		"description": "SvelteKit Import Env Static Private"
+	},
+	"SvelteKit Import Env Dynamic Public": {
+		"prefix": "$envdynamicpublic",
+		"body": "import { env } from \"\\$env/dynamic/public\";",
+		"description": "SvelteKit Import Env Dynamic Public"
+	},
+	"SvelteKit Import Env Dynamic Private": {
+		"prefix": "$envdynamicprivate",
+		"body": "import { env } from \"\\$env/dynamic/private\";",
+		"description": "SvelteKit Import Env Dynamic Private"
+	},
+	"SvelteKit Import Service Worker": {
+		"prefix": "$serviceworker",
+		"body": "import { ${1} } from \"\\$service-worker\";",
+		"description": "SvelteKit Import Service Worker"
+	},
+	"SvelteKit Import Hooks": {
+		"prefix": "$hooks",
+		"body": "import { ${1} } from \"@sveltejs/kit/hooks\";",
+		"description": "SvelteKit Import Hooks"
+	},
+	"SvelteKit Import Node": {
+		"prefix": "$node",
+		"body": "import { ${1} } from \"@sveltejs/kit/node\";",
+		"description": "SvelteKit Import Node"
+	},
+	"SvelteKit Import Polyfills": {
+		"prefix": "$polyfills",
+		"body": "import { ${1} } from \"@sveltejs/kit/node/polyfills\";",
+		"description": "SvelteKit Import Polyfills"
+	},
+	"SvelteKit Import Vite": {
+		"prefix": "$vite",
+		"body": "import { ${1} } from \"@sveltejs/kit/vite\";",
+		"description": "SvelteKit Import Vite"
+	},
+	"SvelteKit Import Lib": {
+		"prefix": "$lib",
+		"body": "import ${1} from \"\\$lib/${2}\";",
+		"description": "SvelteKit Import Lib"
+	},
+	"SvelteKit Import Internal Paths": {
+		"prefix": "$internal",
+		"body": "import { ${1} } from \"\\$internal/paths\";",
+		"description": "SvelteKit Import Internal Paths"
+	}
+}

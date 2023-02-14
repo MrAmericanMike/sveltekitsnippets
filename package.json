@@ -2,7 +2,7 @@
 	"name": "sveltekitsnippets",
 	"displayName": "SvelteKit Snippets",
 	"description": "SvelteKit Snippets",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"license": "MIT",
 	"publisher": "MrAmericanMike",
 	"author": {
@@ -32,7 +32,19 @@
 		"snippets": [
 			{
 				"language": "javascript",
+				"path": "./snippets/sveltekit-common.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/sveltekit-common.code-snippets"
+			},
+			{
+				"language": "javascript",
 				"path": "./snippets/sveltekit-javascript.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/sveltekit-typescript.code-snippets"
 			}
 		]
 	}

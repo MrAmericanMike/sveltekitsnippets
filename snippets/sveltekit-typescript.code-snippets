@@ -1,87 +1,85 @@
 {
+	"SvelteKit Types": {
+		"prefix": "$types",
+		"body": "import type { ${1} } from \"./\\$types\";",
+		"description": "SvelteKit Types"
+	},
 	"SvelteKit GET": {
 		"prefix": "$get",
 		"body": [
-			"/** @type {import(\"./\\$types\").RequestHandler} */", //
-			"export function GET(event) {",
+			"export const GET = ((event) => {", //
 			"\treturn json({${1}});",
-			"}"
+			"}) satisfies RequestHandler;"
 		],
 		"description": "SvelteKit GET"
 	},
 	"SvelteKit POST": {
 		"prefix": "$post",
 		"body": [
-			"/** @type {import(\"./\\$types\").RequestHandler} */", //
-			"export function POST(event) {",
+			"export const POST = ((event) => {", //
 			"\treturn json({${1}});",
-			"}"
+			"}) satisfies RequestHandler;"
 		],
 		"description": "SvelteKit POST"
 	},
 	"SvelteKit PATCH": {
 		"prefix": "$patch",
 		"body": [
-			"/** @type {import(\"./\\$types\").RequestHandler} */", //
-			"export function PATCH(event) {",
+			"export const PATCH = ((event) => {", //
 			"\treturn json({${1}});",
-			"}"
+			"}) satisfies RequestHandler;"
 		],
 		"description": "SvelteKit PATCH"
 	},
 	"SvelteKit PUT": {
 		"prefix": "$put",
 		"body": [
-			"/** @type {import(\"./\\$types\").RequestHandler} */", //
-			"export function PUT(event) {",
+			"export const PUT = ((event) => {", //
 			"\treturn json({${1}});",
-			"}"
+			"}) satisfies RequestHandler;"
 		],
 		"description": "SvelteKit PUT"
 	},
 	"SvelteKit DELETE": {
 		"prefix": "$delete",
 		"body": [
-			"/** @type {import(\"./\\$types\").RequestHandler} */", //
-			"export function DELETE(event) {",
+			"export const DELETE = ((event) => {", //
 			"\treturn json({${1}});",
-			"}"
+			"}) satisfies RequestHandler;"
 		],
 		"description": "SvelteKit DELETE"
 	},
 	"SvelteKit PageData": {
 		"prefix": "$pagedata",
 		"body": [
-			"/** @type {import(\"./\\$types\").PageData} */", //
-			"export let data;"
+			"import type { PageData } from \"./\\$types\";", //
+			"export let data: PageData;"
 		],
 		"description": "SvelteKit PageData"
 	},
 	"SvelteKit LayoutData": {
 		"prefix": "$layoutdata",
 		"body": [
-			"/** @type {import(\"./\\$types\").LayoutData} */", //
-			"export let data;"
+			"import type { LayoutData } from \"./\\$types\";", //
+			"export let data: LayoutData;"
 		],
 		"description": "SvelteKit LayoutData"
 	},
 	"SvelteKit PageLoad": {
 		"prefix": "$pageload",
 		"body": [
-			"/** @type {import(\"./\\$types\").PageLoad} */", //
-			"export function load({ ${1} }) {",
+			"export const load = (({ ${1} }) => {", //
 			"\t${2}",
-			"}"
+			"}) satisfies PageLoad;"
 		],
 		"description": "SvelteKit PageLoad"
 	},
 	"SvelteKit PageServerLoad": {
 		"prefix": "$pageserverload",
 		"body": [
-			"/** @type {import(\"./\\$types\").PageServerLoad} */", //
-			"export function load({ ${1} }) {",
+			"export const load = (({ ${1} }) => {", //
 			"\t${2}",
-			"}"
+			"}) satisfies PageServerLoad;"
 		],
 		"description": "SvelteKit PageServerLoad"
 	}
