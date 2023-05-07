@@ -11,7 +11,7 @@
 			"\treturn json({${1}});",
 			"}) satisfies RequestHandler;"
 		],
-		"description": "SvelteKit GET"
+		"description": "SvelteKit GET [+server.ts]"
 	},
 	"SvelteKit POST": {
 		"prefix": "$post",
@@ -20,7 +20,7 @@
 			"\treturn json({${1}});",
 			"}) satisfies RequestHandler;"
 		],
-		"description": "SvelteKit POST"
+		"description": "SvelteKit POST [+server.ts]"
 	},
 	"SvelteKit PATCH": {
 		"prefix": "$patch",
@@ -29,7 +29,7 @@
 			"\treturn json({${1}});",
 			"}) satisfies RequestHandler;"
 		],
-		"description": "SvelteKit PATCH"
+		"description": "SvelteKit PATCH [+server.ts]"
 	},
 	"SvelteKit PUT": {
 		"prefix": "$put",
@@ -38,7 +38,7 @@
 			"\treturn json({${1}});",
 			"}) satisfies RequestHandler;"
 		],
-		"description": "SvelteKit PUT"
+		"description": "SvelteKit PUT [+server.ts]"
 	},
 	"SvelteKit DELETE": {
 		"prefix": "$delete",
@@ -47,7 +47,29 @@
 			"\treturn json({${1}});",
 			"}) satisfies RequestHandler;"
 		],
-		"description": "SvelteKit DELETE"
+		"description": "SvelteKit DELETE [+server.ts]"
+	},
+	"SvelteKit PageLoad": {
+		"prefix": "$pageload",
+		"body": [
+			"import type { PageLoad } from \"./\\$types\";", //
+			"",
+			"export const load = (({ ${1} }) => {", //
+			"\t${2}",
+			"}) satisfies PageLoad;"
+		],
+		"description": "SvelteKit PageLoad [+page.ts]"
+	},
+	"SvelteKit PageServerLoad": {
+		"prefix": "$pageserverload",
+		"body": [
+			"import type { PageServerLoad } from \"./\\$types\";", //
+			"",
+			"export const load = (({ ${1} }) => {", //
+			"\t${2}",
+			"}) satisfies PageServerLoad;"
+		],
+		"description": "SvelteKit PageServerLoad [+page.server.ts]"
 	},
 	"SvelteKit PageData": {
 		"prefix": "$pagedata",
@@ -55,7 +77,29 @@
 			"import type { PageData } from \"./\\$types\";", //
 			"export let data: PageData;"
 		],
-		"description": "SvelteKit PageData"
+		"description": "SvelteKit PageData [+page.svelte]"
+	},
+	"SvelteKit LayoutLoad": {
+		"prefix": "$layoutload",
+		"body": [
+			"import type { LayoutLoad } from \"./\\$types\";", //
+			"",
+			"export const load = (({ ${1} }) => {",
+			"\t${2}",
+			"}) satisfies LayoutLoad;"
+		],
+		"description": "SvelteKit LayoutLoad [+layout.ts]"
+	},
+	"SvelteKit LayoutServerLoad": {
+		"prefix": "$layoutserverload",
+		"body": [
+			"import type { LayoutServerLoad } from \"./\\$types\";", //
+			"",
+			"export const load = (({ ${1} }) => {",
+			"\t${2}",
+			"}) satisfies LayoutServerLoad;"
+		],
+		"description": "SvelteKit LayoutServerLoad [+layout.server.ts]"
 	},
 	"SvelteKit LayoutData": {
 		"prefix": "$layoutdata",
@@ -63,24 +107,79 @@
 			"import type { LayoutData } from \"./\\$types\";", //
 			"export let data: LayoutData;"
 		],
-		"description": "SvelteKit LayoutData"
+		"description": "SvelteKit LayoutData [+layout.svelte]"
 	},
-	"SvelteKit PageLoad": {
-		"prefix": "$pageload",
+	"SvelteKit Actions": {
+		"prefix": "$actions",
 		"body": [
-			"export const load = (({ ${1} }) => {", //
-			"\t${2}",
-			"}) satisfies PageLoad;"
+			"import type { Actions } from \"./\\$types\";", //
+			"",
+			"export const actions = {",
+			"\tdefault: async ({ request }) => {",
+			"\t\tconst data = await request.formData();",
+			"\t\t${1}",
+			"\t}",
+			"} satisfies Actions;"
 		],
-		"description": "SvelteKit PageLoad"
+		"description": "SvelteKit Actions [+page.server.ts]"
 	},
-	"SvelteKit PageServerLoad": {
-		"prefix": "$pageserverload",
+	"SvelteKit Hooks Handle": {
+		"prefix": "$handle",
 		"body": [
-			"export const load = (({ ${1} }) => {", //
-			"\t${2}",
-			"}) satisfies PageServerLoad;"
+			"import type { Handle } from \"@sveltejs/kit\";", //
+			"",
+			"export const handle = (async ({ event, resolve }) => {",
+			"\t${1}",
+			"\tconst response = await resolve(event);",
+			"\treturn response;",
+			"}) satisfies Handle;"
 		],
-		"description": "SvelteKit PageServerLoad"
+		"description": "SvelteKit Hooks Handle [src/hooks.server.ts]"
+	},
+	"SvelteKit Hooks HandleFetch": {
+		"prefix": "$handlefetch",
+		"body": [
+			"import type { HandleFetch } from \"@sveltejs/kit\";", //
+			"",
+			"export const handleFetch = (async ({ request, fetch }) => {",
+			"\t${1}",
+			"\treturn fetch(request);",
+			"}) satisfies HandleFetch;"
+		],
+		"description": "SvelteKit Hooks HandleFetch [src/hooks.server.ts]"
+	},
+	"SvelteKit Hooks HandleServerError": {
+		"prefix": "$handleservererror",
+		"body": [
+			"import type { HandleServerError } from \"@sveltejs/kit\";", //
+			"",
+			"export const handleError = (async ({ error, event }) => {",
+			"\t${1}",
+			"}) satisfies HandleServerError;"
+		],
+		"description": "SvelteKit Hooks HandleServerError [src/hooks.server.ts]"
+	},
+	"SvelteKit Hooks HandleClientError": {
+		"prefix": "$handleclienterror",
+		"body": [
+			"import type { HandleClientError } from \"@sveltejs/kit\";", //
+			"",
+			"export const handleError = (async ({ error, event }) => {",
+			"\t${1}",
+			"}) satisfies HandleClientError;"
+		],
+		"description": "SvelteKit Hooks HandleClientError [src/hooks.server.ts]"
+	},
+	"SvelteKit Snapshot": {
+		"prefix": "$snapshot",
+		"body": [
+			"import type { Snapshot } from \"./\\$types\";", //
+			"",
+			"export const snapshot: Snapshot = {",
+			"\tcapture: () => ${1},",
+			"\trestore: (value) => (${2} = value)",
+			"};"
+		],
+		"description": "SvelteKit Snapshot [+page.svelte, +layout.svelte]"
 	}
 }

@@ -41,15 +41,21 @@ export let data;
 `$pagedata` in Typescript will expand to:
 
 ```ts
-import type { PageData } from \"./$types\";
+import type { PageData } from "./$types";
 export let data: PageData;
 ```
 
 **Many other snippets like:**
 
-`$import`, `$get`, `$post`, `$patch`, `$put`, `$delete`, `$pagedata`, `$layoutdata`, `$environment`, `$forms`, `$navigation`, `$paths`, `$stores`, `$envstaticpublic`, `$envstaticprivate`, `$envdynamicpublic`, `$envdynamicprivate`, `$serviceworker`, `$hooks`, `$node`, `$polyfills`, `$vite`, `$lib`, `$internal`
+`$import`, `$get`, `$post`, `$patch`, `$put`, `$delete`, `$pageload`, `$pageserverload`, `$pagedata`, `$layoutload`, `$layoutserverload`, `$layoutdata`,, `$actions`, `$handle`, `$handlefetch`, `$handleservererror`, `$handleclienterror`, `$environment`, `$forms`, `$navigation`, `$paths`, `$stores`, `$envstaticpublic`, `$envstaticprivate`, `$envdynamicpublic`, `$envdynamicprivate`, `$serviceworker`, `$hooks`, `$node`, `$polyfills`, `$vite`, `$lib`, `$internal`
 
 ## Release Notes
+
+### 0.0.4
+
+Fixed example on documentation
+Added `$actions`, `$handle`, `$handlefetch`, `$handleservererror`, `$handleclienterror`, `$layoutload`, `$layoutserverload`
+Added hints in snippets descriptions about in what files each snippet "should" be used most commonly (When applicable)
 
 ### 0.0.3
 

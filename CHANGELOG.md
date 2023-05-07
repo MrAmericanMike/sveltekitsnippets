@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.0.4]
+
+-   Fixed example on documentation
+-   Added `$actions`, `$handle`, `$handlefetch`, `$handleservererror`, `$handleclienterror`, `$layoutload`, `$layoutserverload`
+-   Added hints in snippets descriptions about in what files each snippet "should" be used most commonly (When applicable)
+
 ## [0.0.3]
 
 -   Fixed minor error on documentation
