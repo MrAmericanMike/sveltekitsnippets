@@ -47,20 +47,24 @@ export let data: PageData;
 
 **Many other snippets like:**
 
-`$import`, `$get`, `$post`, `$patch`, `$put`, `$delete`, `$pageload`, `$pageserverload`, `$pagedata`, `$layoutload`, `$layoutserverload`, `$layoutdata`,, `$actions`, `$handle`, `$handlefetch`, `$handleservererror`, `$handleclienterror`, `$environment`, `$forms`, `$navigation`, `$paths`, `$stores`, `$envstaticpublic`, `$envstaticprivate`, `$envdynamicpublic`, `$envdynamicprivate`, `$serviceworker`, `$hooks`, `$node`, `$polyfills`, `$vite`, `$lib`, `$internal`
+`$import`, `$get`, `$post`, `$patch`, `$put`, `$delete`, `$pageload`, `$pageserverload`, `$pagedata`, `$layoutload`, `$layoutserverload`, `$layoutdata`, `$actions`, `$handle`, `$handlefetch`, `$handleservererror`, `$handleclienterror`, `$environment`, `$forms`, `$navigation`, `$paths`, `$stores`, `$envstaticpublic`, `$envstaticprivate`, `$envdynamicpublic`, `$envdynamicprivate`, `$serviceworker`, `$hooks`, `$node`, `$polyfills`, `$vite`, `$lib`, `$internal`
 
 ## Release Notes
 
 ### 0.0.4
 
 Fixed example on documentation
+
 Added `$actions`, `$handle`, `$handlefetch`, `$handleservererror`, `$handleclienterror`, `$layoutload`, `$layoutserverload`
+
 Added hints in snippets descriptions about in what files each snippet "should" be used most commonly (When applicable)
 
 ### 0.0.3
 
 Fixed minor error on documentation
+
 Added Issues Tracker to the documentation
+
 Added basic support for TypeScript
 
 ### 0.0.2
